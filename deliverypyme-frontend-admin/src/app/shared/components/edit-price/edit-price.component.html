@@ -1,0 +1,19 @@
+<div class="container-modal">
+  <h3 class="title-modal">Editar cantidad</h3>
+  <div class="content-modal">
+    <form [formGroup]="form">
+      <div class="content-input">
+        <span class="mensaje-error" [ngClass]="{ error: verificarInput('price') }">Campo requerido</span>
+        <span class="mensaje-error" [ngClass]="{ error: form.get('price')?.hasError('min') }">Formato inválido</span>
+        <label class="label">Cantidad</label>
+        <input placeholder="Cantidad" formControlName="price" type="number" />
+      </div>
+    </form>
+  </div>
+  <div class="action-modal">
+    <button class="btn" (click)="submit()" [disabled]="form.invalid">
+      Aceptar <i class="fas fa-check-circle"></i>
+    </button>
+    <button class="btn close" (click)="onNoClick()">Cerrar <i class="fas fa-times-circle"></i></button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<header class="header" [ngClass]="{ 'shadow': headerScroll, 'show': showNav }">
+  <div class="header__content">
+    <a [routerLink] [fragment] class="header__content__logo">
+      <img class="header__logo" src="./assets/imagenes/logos/logo.png" alt="Delivery de pymes">
+    </a>
+    <div class="header__nav">
+      <div class="header__nav_show" (click)="showNav = !showNav" [ngClass]="{ 'show': showNav }">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <app-nav [showNav]="showNav"></app-nav>
+    </div>
+  </div>
+</header>

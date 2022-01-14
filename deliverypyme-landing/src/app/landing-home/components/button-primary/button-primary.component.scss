@@ -1,0 +1,24 @@
+.button {
+  align-items: center;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  gap: 0.6rem;
+  outline: none;
+  overflow: hidden;
+  padding: 0.6rem 1.3rem;
+  position: relative;
+  transition: 0.3s ease all;
+
+  &:hover {
+    box-shadow: var(--shadow-lite);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    user-select: none;
+  }
+}

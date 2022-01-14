@@ -1,0 +1,15 @@
+<button
+  (click)="onClick()"
+  class="button"
+  [disabled]="disabled"
+  [type]="type"
+  [ngStyle]="{
+    'background': background,
+    'color': color,
+    'font-weight': bold ? 600 : 500,
+    'justify-content': position,
+    'width': width
+  }"
+>
+  <ng-content></ng-content>
+</button>

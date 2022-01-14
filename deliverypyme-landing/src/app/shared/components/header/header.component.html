@@ -1,0 +1,32 @@
+<!-- HEADER TIENDA -->
+<header
+  class="header-tienda"
+  [ngClass]="{ shadow: headerColor }"
+  *ngIf="isTienda"
+>
+  <div class="container-logo">
+    <i class="fas fa-arrow-right" *ngIf="!nav" (click)="navTienda(true)"></i>
+    <i class="fas fa-arrow-left" *ngIf="nav" (click)="navTienda(false)"></i>
+    <div class="content-logo">
+      <h1 class="h1">
+        <img
+          src="./assets/imagenes/logos/logo.png"
+          alt="Delivery de pymes"
+        />
+      </h1>
+    </div>
+  </div>
+  <div class="content-config">
+    <div class="setting" (click)="verMisNotificaciones()">
+      <i
+        class="fas fa-bell notification"
+        [attr.data-notification]="notificationsNotSeen"
+      ></i>
+    </div>
+    <div class="setting" (click)="verMiConfiguracion()">
+      <span class="name">{{ user?.name }}</span>
+      <i class="fas fa-user-cog"></i>
+    </div>
+  </div>
+</header>
+<!-- FIN HEADER TIENDA  -->

@@ -1,0 +1,132 @@
+.container-perfil {
+  margin: auto;
+  max-width: var(--width-max);
+  position: relative;
+}
+
+.container-perfil .content-perfil .img-options {
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 0.3rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.container-perfil .content-perfil .img-options .img {
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  font-size: 12px;
+  height: 128px;
+  justify-content: center;
+  object-fit: cover;
+  width: 128px;
+}
+
+.container-perfil .content-perfil .img-options .options {
+  text-align: center;
+  width: 100%;
+}
+
+.container-perfil .content-perfil .img-options .options .fas,
+.container-perfil .content-perfil .img-options .options .fas:visited {
+  align-items: center;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 50%;
+  color: var(--color-black);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  height: 30px;
+  justify-content: center;
+  margin: 5px;
+  outline: none;
+  transition: 0.3s;
+  width: 30px;
+}
+
+.container-perfil .content-perfil .img-options .options .fas:hover {
+  background-color: var(--color-grey);
+}
+
+.container-perfil .content-perfil .img-options .title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px;
+}
+
+.container-perfil .content-info {
+  background-color: var(--color-white);
+  border-radius: 0.3rem;
+  box-shadow: var(--shadow-card);
+  display: block;
+  margin: 0 1rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
+}
+
+.container-perfil .content-info .content-detalle {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.container-perfil .content-info .content-detalle .fas,
+.container-perfil .content-info .content-detalle .fab {
+  color: var(--color-grey);
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  margin-right: 10px;
+  min-width: 30px;
+  padding-top: 5px;
+}
+
+.container-perfil .content-info .content-detalle .info p {
+  margin: 0;
+}
+
+.container-perfil .content-info .content-detalle .info .label {
+  color: var(--color-grey);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.container-perfil .content-info .content-detalle .info .text-info {
+  font-size: 16px;
+}
+
+@media (min-width: 520px) {
+  .container-perfil .content-info {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .container-perfil .content-perfil {
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container-perfil .content-perfil .img-options {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-perfil {
+    margin-top: 3rem;
+  }
+
+  .container-perfil .content-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

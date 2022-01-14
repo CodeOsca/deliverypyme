@@ -1,0 +1,37 @@
+<div class="container-modal-two" [ngClass]="{ ver: ver }">
+  <div class="modal-two">
+    <aside class="header-modal-two">
+      <i class="fas fa-times close" (click)="cerrar.emit(false)"></i>
+    </aside>
+    <section class="content-modal-two">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="content-input">
+          <span class="mensaje-error" [ngClass]="{ error: verificarInput('name') }">Campo requerido</span>
+          <label class="label">Nombre de contacto</label>
+          <input placeholder="Nombre de contacto" formControlName="name" />
+        </div>
+
+        <div class="content-input">
+          <span class="mensaje-error" [ngClass]="{ error: verificarInput('email') }">Campo requerido</span>
+          <label class="label">Correo</label>
+          <input type="email" placeholder="Correo" formControlName="email" />
+        </div>
+
+        <div class="content-input">
+          <span class="mensaje-error" [ngClass]="{ error: verificarInput('phone') }">Campo requerido</span>
+          <span class="mensaje-error" [ngClass]="{ error: form.get('phone')?.hasError('pattern') }"
+            >Formato invalido</span
+          >
+          <label class="label">Teléfono</label>
+          <input placeholder="Teléfono" formControlName="phone" />
+        </div>
+
+        <aside class="footer-modal-two">
+          <app-button-primary type="submit" background="var(--color-primary)" color="var(--color-white)" [disabled]="form.invalid">
+            <i class="fas fa-check-circle"></i> Aceptar
+          </app-button-primary>
+        </aside>
+      </form>
+    </section>
+  </div>
+</div>

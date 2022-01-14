@@ -1,0 +1,54 @@
+<div class="auth">
+  <img class="banner__background" src="./assets/imagenes/svg/image_lines.svg" alt="Lineas de fondo" />
+
+  <div class="content-auth">
+    <app-card title="Iniciar Sesión">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="content-inputs">
+          <div
+            class="my-input"
+            [ngClass]="{
+              error: verificarInput('email')
+            }"
+          >
+            <i class="fas fa-user"></i>
+            <input placeholder="Correo Electronico" formControlName="email" />
+          </div>
+
+          <div
+            class="my-input"
+            [ngClass]="{
+              error: verificarInput('password')
+            }"
+          >
+            <i class="fas fa-lock"></i>
+            <input placeholder="Contraseña" type="password" formControlName="password" />
+          </div>
+        </div>
+        <div class="buttons" *ngIf="!isLoading; else elseSubmit">
+          <app-button-primary
+            color="var(--color-primary)"
+            background="var(--color-white)"
+            [bold]="true"
+            type="submit"
+            [disabled]="formLogin.invalid"
+            >Entrar</app-button-primary
+          >
+        </div>
+        <ng-template #elseSubmit>
+          <div class="loader">
+            <div class="lds-ripple">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </ng-template>
+        <div class="content-link">
+          <a routerLink="/recuperar-contraseña">¿Has olvidado tu contraseña?</a>
+          <a routerLink="/registrarse">Registrarse</a>
+          <a routerLink="/">Ir a inicio</a>
+        </div>
+      </form>
+    </app-card>
+  </div>
+</div>

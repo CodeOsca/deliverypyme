@@ -1,0 +1,22 @@
+<nav class="nav-tienda" [ngClass]="{ 'ver': verNav }">
+    <h4 class="title">
+        <img
+          src="./assets/imagenes/logos/logo.png"
+          alt="Delivery de pymes"
+        />
+    </h4>
+    <ul>
+        <li class="item" *ngFor="let item of nav" (click)="closeNav()" [ngClass]="{ 'not1024': !item.is1024 }">
+            <a routerLink="{{ item.link }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.exact }" class="link-item">
+                <i class="fas fa-{{ item.icon }}"></i>
+                <span class="name">{{ item.nombre }}</span>
+            </a>
+        </li>
+    </ul>
+
+    <p class="texto">
+        Delivery de pymes 2021 &copy; | Hecho con mucho
+        <i class="fas fa-heart"></i> por
+        <a href="https://hellomundo.io/" target="__blank">hellomundo</a>
+      </p>
+</nav>

@@ -1,0 +1,26 @@
+<div class="configuraciones" [ngClass]="{ ver: verConfiguraciones }">
+  <div class="info-perfil" *ngIf="user">
+    <img class="img" [src]="API + user.image" alt="Imagen de perfil" />
+    <h3 class="name">{{ user.name }}</h3>
+  </div>
+  <ul class="list-config">
+    <li class="item-config">
+      <app-button-primary routerLink="/tienda/perfil" background="transparent" color="var(--color-primary)" position="flex-start" width="100%" (handleClick)="navClose()">
+        <i class="fas fa-user"></i>
+        <span class="text-item">Mis datos</span>
+      </app-button-primary>
+    </li>
+    <li class="item-config">
+      <app-button-primary routerLink="/recuperar-contraseña" background="transparent" color="var(--color-primary)" position="flex-start" width="100%" (handleClick)="navClose()">
+        <i class="fas fa-user-lock"></i>
+        <span class="text-item">Cambiar contraseña</span>
+      </app-button-primary>
+    </li>
+    <li class="item-config">
+      <app-button-primary background="transparent" color="var(--color-primary)" position="flex-start" width="100%" (handleClick)="logout()">
+        <i class="fas fa-door-open"></i>
+        <span class="text-item">Cerrar sesión</span>
+      </app-button-primary>
+    </li>
+  </ul>
+</div>

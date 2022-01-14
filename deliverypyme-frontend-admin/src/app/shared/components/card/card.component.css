@@ -1,0 +1,55 @@
+.card {
+  background: var(--color-gradient);
+  border-radius: 30px;
+  color: var(--color-white);
+  margin: 3rem auto;
+  max-width: 80%;
+  min-height: 300px;
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card::before,
+.card::after {
+  background: var(--color-gradient);
+  border-radius: 30px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.card::before {
+  opacity: 0.3;
+  transform: rotate(-10deg);
+}
+
+.card::after {
+  opacity: 0.15;
+  transform: rotate(-5deg);
+}
+
+@media screen and (max-width: 767px) {
+  .card::before {
+    transform: rotate(-5deg);
+  }
+
+  .card::after {
+    transform: rotate(-2deg);
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .card::before,
+  .card::after {
+    display: none;
+  }
+}

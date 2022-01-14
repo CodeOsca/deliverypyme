@@ -1,0 +1,76 @@
+<div class="container-main">
+  <section class="header-main">
+    <h2 class="title-main">Pagos realizados</h2>
+  </section>
+
+  <section class="content-main">
+    <div class="container-info">
+      <div class="info-ordenes">
+        <div class="content-info">
+          <div class="description-info">
+            <p class="title-info">TOTAL: ${{ amountTotal }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <mat-button-toggle-group
+      appearance="legacy"
+      name="fontStyle"
+      aria-label="Font Style"
+      value="HOY"
+      (change)="filterByDate($event)"
+    >
+      <mat-button-toggle [value]="filter" *ngFor="let filter of filterDates">{{ filter }}</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <app-table
+      *ngIf="orders"
+      [columns]="columns"
+      [filterOptions]="filterOptions"
+      laberPerPage="Ordenes por página"
+      [data]="orders"
+      [hasHeaderOptions]="true"
+    >
+      <ng-container matColumnDef="pyme">
+        <th mat-header-cell *matHeaderCellDef>Pyme</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.user.storeName }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="media">
+        <th mat-header-cell *matHeaderCellDef>Método de pago</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.media }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="typeReference">
+        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.typeReference }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Total pagado</th>
+        <td mat-cell *matCellDef="let row"><i class="fas fa-dollar-sign"></i>{{ row.amount }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="paymentDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha del pago</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.paymentDate | date: "mediumDate" }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="opciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row" style="text-align: right">
+          <a class="id" [routerLink]="link(row)" matTooltip="Detalles"><i class="fas fa-eye"></i></a>
+        </td>
+      </ng-container>
+    </app-table>
+  </section>
+</div>

@@ -1,0 +1,21 @@
+.content-header {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.content-header .date {
+    font-weight: 600;
+}
+
+.content-header .title-notificacion {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.contenido {
+    margin-bottom: 20px;
+}

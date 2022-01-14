@@ -1,0 +1,26 @@
+.footer {
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: column;
+  height: 100px;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer .texto {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+  text-align: center;
+}
+
+.footer .texto .fas {
+  color: red;
+  margin: 0 5px;
+}
+
+.footer .texto a,
+.footer .texto a:visited {
+  color: var(--color-primary);
+}

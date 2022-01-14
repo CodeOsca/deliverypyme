@@ -1,0 +1,81 @@
+.precios {
+  --columns: 2;
+  // $columns: 4;
+
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  margin-bottom: 2rem;
+
+  // @for $i from 1 through $columns {
+  //   &.columns-#{$i} {
+  //     --columns: #{$i};
+  //   }
+  // }
+
+  @media screen and (max-width: 899px) {
+    --columns: 1;
+  }
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  padding: 4rem 0;
+  position: relative;
+
+  &::before {
+    animation: rotation 15s linear infinite;
+    border: 10px dashed var(--color-primary);
+    border-radius: 50%;
+    content: "";
+    height: 500px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+  }
+
+  @media screen and (max-width: 620px) {
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.info__background {
+  bottom: 0;
+  height: 100%;
+  left: 50%;
+  max-width: var(--width-max);
+  position: absolute;
+  transform: rotate(180deg) translateX(50%);
+  width: 100%;
+  z-index: 0;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 1s ease all;
+  transform: translateY(100px);
+  visibility: hidden;
+
+  &.view-section {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}

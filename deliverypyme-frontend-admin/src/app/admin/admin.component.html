@@ -1,0 +1,35 @@
+<app-loader></app-loader>
+
+<main class="main" [ngClass]="{ 'ver-nav': verNav }">
+  <app-header
+    [nav]="verNav"
+    [notificaciones]="verNotificaciones"
+    [notificationsNotSeen]="notificationsNotSeen"
+    [configuraciones]="verConfiguraciones"
+    (clickVerNav)="verNav = $event"
+    (verNotificaciones)="verNotificaciones = $event"
+    (verConfiguraciones)="verConfiguraciones = $event"
+  ></app-header>
+  <div class="nav">
+    <app-nav [verNav]="verNav" (close)="verNav = $event"></app-nav>
+  </div>
+  <app-notificaciones
+    [verNotificaciones]="verNotificaciones"
+    (closeNotificacion)="verNotificaciones = $event"
+    (amountNotSeen)="notificationsNotSeen = $event"
+  ></app-notificaciones>
+  <app-configuraciones
+    [verConfiguraciones]="verConfiguraciones"
+    (closeConfiguraciones)="verConfiguraciones = $event"
+  ></app-configuraciones>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <p class="texto">
+    Delivery de pymes 2021 &copy; | Hecho con mucho
+    <i class="fas fa-heart"></i> por
+    <a href="https://hellomundo.io/" target="__blank">hellomundo</a>
+  </p>
+</main>

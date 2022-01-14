@@ -1,0 +1,73 @@
+.content-calificacion {
+  margin: auto;
+  max-width: 400px;
+}
+
+.content-calificacion textarea {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: var(--color-black);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  width: 100%;
+}
+
+.content-calificacion textarea::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+.content-calificacion textarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content-calificacion textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.content-calificacion textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-calificacion .calificar {
+  background-color: var(--color-grey);
+  cursor: pointer;
+  font-size: 22px;
+  float: right;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-calificacion .calificar .starts {
+  background-color: var(--color-secondary);
+  cursor: pointer;
+  clip-path: polygon(0 0, var(--porc) 0, var(--porc) 100%, 0% 100%);
+  height: 100%;
+  font-size: 22px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: 0.3s ease all;
+  width: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-calificacion .text {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}

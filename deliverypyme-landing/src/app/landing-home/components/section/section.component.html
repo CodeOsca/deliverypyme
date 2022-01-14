@@ -1,0 +1,8 @@
+<section class="section" style="--background: {{background}}" [ngClass]="{ 'separator-top': separatorTop, 'separator-bottom': separatorBottom }">
+  <app-title *ngIf="title" [title]="title"></app-title>
+  <app-description-section *ngIf="description" [description]="description"></app-description-section>
+  <br *ngIf="!description" />
+  <br *ngIf="!description" />
+  <br *ngIf="!description" />
+  <ng-content></ng-content>
+</section>

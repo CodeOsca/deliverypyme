@@ -1,0 +1,3 @@
+<div class="steps">
+  <app-step *ngFor="let value of values; let i=index" [value]="value" [index]="i" [total]="values.length - 1" [line]="line" [animationPlay]="animationPlay"></app-step>
+</div>

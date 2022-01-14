@@ -1,0 +1,16 @@
+<section class="banner">
+  <img class="banner__background" src="./assets/imagenes/svg/image_lines.svg" alt="Lineas de fondo">
+  <article class="banner__info">
+    <app-slider-text [height]="height" [fontSize]="fontSize" [listText]="listTitle"></app-slider-text>
+    <p class="color__p">!Para todas esas preguntas, nosotros somos tu respuesta!</p>
+    <p>Somos una empresa de reparto con cobertura a toda la región metropolitana, un servicio totalmente personalizado. De emprendedores para emprendedores.</p>
+    <div class="banner__button">
+      <app-button-primary [bold]="true">
+        <a routerLink="/registrarse" style="text-decoration: none; color: var(--color-white)">REGISTRARSE</a>
+      </app-button-primary>
+    </div>
+  </article>
+  <article class="banner__image">
+    <img src="./assets/imagenes/svg/image_banner.svg" alt="Hombre subiendo escaleras">
+  </article>
+</section>

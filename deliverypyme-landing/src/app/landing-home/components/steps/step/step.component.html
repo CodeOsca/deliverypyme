@@ -1,0 +1,14 @@
+<div class="step" [ngClass]="{ 'shadow': value.info }">
+  <div class="step__image" *ngIf="value.image">
+    <app-image [image]="value.image" [index]="index" [animationPlay]="animationPlay"></app-image>
+  </div>
+  <div class="step__info" *ngIf="value.info">
+    <app-info [info]="value.info"></app-info>
+  </div>
+  <div class="step__circle" [ngClass]="{ 'line': index === 2 && line, 'animation': animationPlay }" *ngIf="value.icon">
+    <app-circle class="circle" [icon]="value.icon" [index]="index" [medium]="!value.image" [animationPlay]="animationPlay"></app-circle>
+  </div>
+  <div class="step__description" *ngIf="value.description">
+    <app-description [description]="value.description" [index]="index" [animationPlay]="animationPlay"></app-description>
+  </div>
+</div>

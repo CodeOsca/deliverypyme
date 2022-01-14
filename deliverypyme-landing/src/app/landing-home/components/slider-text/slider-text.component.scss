@@ -1,0 +1,24 @@
+.slider {
+  overflow: hidden;
+  width: 100%;
+
+  .slider__content {
+    transition: 0.5s ease all;
+
+    .slider__text {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 859px) {
+    .slider__content {
+      .slider__text {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<div class="slider" [ngStyle]="{ 'height': height + 'px' }">
+  <div class="slider__content" [ngStyle]="{ 'margin-top': '-' + marginTop + 'px' }">
+    <p class="slider__text" *ngFor="let text of listText" [ngStyle]="{ 'height': height + 'px', 'font-weight': bold ? 600 : 500, 'font-size': fontSize }">{{text}}</p>
+  </div>
+</div>

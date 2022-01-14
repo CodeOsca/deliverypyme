@@ -1,0 +1,12 @@
+<div class="container-modal">
+    <h3 class="title-modal">{{ data.title }}</h3>
+    <p class="content-modal">{{ data.description }}</p>
+    <div class="action-modal">
+        <app-button-primary background="var(--color-primary)" color="var(--color-white)"  [mat-dialog-close]="true">
+          <i class="fas fa-check-circle"></i> Aceptar
+        </app-button-primary>
+        <app-button-primary background="var(--color-red)" color="var(--color-white)" (handleClick)="onNoClick()">
+          <i class="fas fa-times-circle"></i> Cancelar
+        </app-button-primary>
+    </div>
+</div>

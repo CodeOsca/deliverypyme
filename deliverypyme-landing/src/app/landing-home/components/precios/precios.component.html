@@ -1,0 +1,10 @@
+<div class="precios">
+  <h3 class="precios_title">{{communes.title}}</h3>
+  <aside class="precio">
+    <span class="dollar">$</span>{{communes.price}}
+  </aside>
+  <ul class="list" [ngClass]="{ 'mb': communes.limit.length > 0 }">
+    <li *ngFor="let commune of communes.communes" class="item">{{commune}}</li>
+  </ul>
+  <p class="limit" *ngFor="let limit of communes.limit">{{limit}}</p>
+</div>

@@ -1,0 +1,74 @@
+<div class="container-modal">
+  <h3 class="title-modal">Detalles del producto</h3>
+  <div class="content-modal">
+    <div class="detalles">
+      <!-- NOMBRE DEL CLIENTE -->
+      <div class="content-detalle">
+        <i class="fas fa-street-view"></i>
+        <div class="info">
+          <p class="label">Nombre del cliente</p>
+          <p class="text-info">{{ product.deliveryName }}</p>
+        </div>
+      </div>
+
+      <!-- TELÉFONO -->
+      <div class="content-detalle">
+        <i class="fas fa-phone-alt"></i>
+        <div class="info">
+          <p class="label">Teléfono</p>
+          <p class="text-info">{{ product.deliveryPhone }}</p>
+        </div>
+      </div>
+
+      <!-- COMUNA -->
+      <div class="content-detalle">
+        <i class="fas fa-map-marked-alt"></i>
+        <div class="info">
+          <p class="label">Comuna</p>
+          <p class="text-info">{{ product.deliveryCommuna.name }}</p>
+        </div>
+      </div>
+
+      <!-- PRECIO -->
+      <div class="content-detalle">
+        <i class="fas fa-dollar-sign"></i>
+        <div class="info">
+          <p class="label">Precio</p>
+          <p class="text-info">{{ product.price }}</p>
+        </div>
+      </div>
+
+      <!-- DIRECCIÓN  -->
+      <div class="content-detalle">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="info">
+          <p class="label">Dirección</p>
+          <p class="text-info">{{ product.deliveryAddress }}</p>
+        </div>
+      </div>
+
+      <!-- DIRECCIÓN ESPECÍFICA (NÚMERO) -->
+      <div class="content-detalle">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="info">
+          <p class="label">Detalles (Número de departamento/casa,...)</p>
+          <p class="text-info">{{ product.addressDetails }}</p>
+        </div>
+      </div>
+
+      <!-- OBSERVACIONES -->
+      <div class="content-detalle">
+        <i class="fas fa-book-reader"></i>
+        <div class="info">
+          <p class="label">Observaciones</p>
+          <p class="text-info">
+            {{ product.observations }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="action-modal">
+    <button class="btn close" (click)="onNoClick()">Cerrar <i class="fas fa-times-circle"></i></button>
+  </div>
+</div>

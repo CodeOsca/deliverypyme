@@ -1,0 +1,166 @@
+.content-modal {
+    max-width: 600px;
+}
+
+.container-modal .action-modal {
+    background-color: #fff;
+    bottom: -24px;
+    margin: 0;
+    position: sticky;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.container-perfil {
+    padding: 10px 0;
+    position: relative;
+}
+
+.container-perfil .content-perfil {
+    padding-top: 50px;
+}
+
+.container-perfil .content-perfil .img-options {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.container-perfil .content-perfil .img-options .img {
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    display: flex;
+    font-size: 3em;
+    height: 128px;
+    justify-content: center;
+    object-fit: cover;
+    width: 128px;
+}
+
+.container-perfil .content-perfil .img-options .options {
+    text-align: center;
+    width: 100%;
+}
+
+.container-perfil .content-perfil .img-options .options .fas {
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 14px;
+    height: 30px;
+    justify-content: center;
+    margin: 5px;
+    transition: .3s;
+    width: 30px;
+}
+
+.container-perfil .content-perfil .img-options .options .fas:hover {
+    background-color: #ccc;
+}
+
+.container-perfil .content-perfil .img-options .title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.container-perfil .content-info {
+    background-color: #fff;
+	display: block;
+	padding: 10px;
+    padding-top: 180px;
+    text-align: left;
+}
+
+.container-perfil .content-info .content-detalle {
+	display: flex;
+	margin-bottom: 30px
+}
+
+.container-perfil .content-info .content-detalle .fas,
+.container-perfil .content-info .content-detalle .fab {
+	color: #000;
+	display: flex;
+	font-size: 24px;
+	justify-content: center;
+	margin-right: 10px;
+	min-width: 30px;
+	padding-top: 5px;
+}
+
+.container-perfil .content-info .content-detalle .info p {
+	margin: 0;
+}
+
+.container-perfil .content-info .content-detalle .info .label {
+	color: var(--color-p-dark);
+	font-size: 12px;
+	line-height: 1;
+}
+
+.container-perfil .content-info .content-detalle .info .text-info {
+	font-size: 16px;
+}
+
+@media (min-width: 520px) {
+	.container-perfil .content-info {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 600px) {
+    ::ng-deep .cdk-overlay-pane {
+        max-height: 80vh !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-perfil .content-perfil {
+        background-color: #fff;
+        padding-top: 0;
+    }
+
+	.container-perfil .content-perfil .img-options {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas: "img non" "img title" "img options" "img none";
+        grid-template-columns: 128px 1fr;
+        position: relative;
+    }
+
+    .container-perfil .content-perfil .img-options .img {
+        grid-area: img;
+    }
+    
+    .container-perfil .content-perfil .img-options .options {
+        align-items: flex-start;
+        display: flex;
+        grid-area: options;
+        justify-content: flex-start;
+    }
+    
+    .container-perfil .content-perfil .img-options .title {
+        font-size: 28px;
+        grid-area: title;
+    }
+
+    .container-perfil .content-info {
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 10px;
+        padding-top: 30px;
+    }
+}

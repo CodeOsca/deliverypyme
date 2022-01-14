@@ -1,0 +1,120 @@
+::ng-deep .cdk-overlay-pane {
+  max-height: 100vh !important;
+  max-width: 600px !important;
+}
+
+::ng-deep .mat-dialog-container::-webkit-scrollbar {
+  height: 5px !important;
+  width: 5px !important;
+}
+
+::ng-deep .mat-dialog-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .mat-dialog-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+::ng-deep .mat-dialog-container::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.container-modal .action-modal {
+  align-items: center;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container-modal .action-modal .btn {
+  align-items: center;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-black);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+  height: 35px;
+  justify-content: space-between;
+  letter-spacing: 0.4px;
+  margin: 5px;
+  max-width: 250px;
+  outline: none;
+  padding: 0 20px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.container-modal .action-modal .btn:hover {
+  background-color: var(--color-grey);
+}
+
+.container-modal .action-modal .btn:disabled,
+.container-modal .action-modal .btn:hover:disabled {
+  background-color: #f2f2f2;
+  color: var(--color-grey);
+  cursor: default;
+}
+
+.container-modal .action-modal .btn .fas {
+  color: var(--color-blue);
+  font-size: 14px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.container-modal .action-modal .btn.close .fas {
+  color: var(--color-red);
+}
+
+.container-modal .action-modal .btn:disabled .fas,
+.container-modal .action-modal .btn:disabled:hover .fas,
+.container-modal .action-modal .btn:disabled.close:hover .fas {
+  color: var(--color-grey);
+}
+
+.container-modal .content-modal {
+  font-size: 14px;
+  margin: 20px 0;
+  text-align: center;
+  word-spacing: 2px;
+}
+
+.container-modal .title-modal {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin: 0;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+  .container-modal .action-modal .btn {
+    font-size: 14px;
+    height: 40px;
+    max-width: 200px;
+  }
+
+  .container-modal .action-modal .btn .fas {
+    font-size: 18px;
+  }
+
+  .container-modal .content-modal {
+    font-size: 16px;
+  }
+
+  .container-modal .title-modal {
+    font-size: 22px;
+  }
+}

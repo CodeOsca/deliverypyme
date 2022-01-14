@@ -1,0 +1,10 @@
+.content-modal {
+    max-width: 300px;
+}
+
+.content-input {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding-right: 0;
+    width: 100%;
+}

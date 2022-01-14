@@ -1,0 +1,39 @@
+<div class="container-modal">
+  <h3 class="title-modal">{{ coupon.name }}</h3>
+  <div class="content-modal">
+    <form [formGroup]="form">
+      <div class="content-input radio">
+        <div class="content-radio">
+          <div class="radio">
+            <input type="radio" id="d" value="d" formControlName="typeTime" />
+            <label for="d">Días</label>
+          </div>
+          <div class="radio">
+            <input type="radio" id="h" value="h" formControlName="typeTime" />
+            <label for="h">Horas</label>
+          </div>
+          <div class="radio">
+            <input type="radio" id="m" value="m" formControlName="typeTime" />
+            <label for="m">Minutos</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-input">
+        <i matSuffix class="fas fa-calendar-day"></i>
+        <span class="mensaje-error" [ngClass]="{ error: verificarInput('expirationTime') }">Campo requerido</span>
+        <span class="mensaje-error" [ngClass]="{ error: form.get('expirationTime')?.hasError('pattern') }"
+          >Formato invalido</span
+        >
+        <label class="label">Tiempo expiración en {{ time() }}</label>
+        <input placeholder="Tiempo expiración en {{ time() }}" formControlName="expirationTime" />
+      </div>
+    </form>
+  </div>
+  <div class="action-modal">
+    <button class="btn" (click)="submitCoupon()" [disabled]="form.invalid">
+      Aceptar <i class="fas fa-check-circle"></i>
+    </button>
+    <button class="btn close" (click)="onNoClick()">Cerrar <i class="fas fa-times-circle"></i></button>
+  </div>
+</div>

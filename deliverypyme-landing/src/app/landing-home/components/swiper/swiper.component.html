@@ -1,0 +1,38 @@
+<div class="content">
+  <swiper [config]="config">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let i of [1,2,3,4,5]">
+        <div class="testimonial-box">
+          <img loading="lazy" src="assets/imagenes/quote.svg" class="quote" />
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sequi iure. Amet laboriosam reiciendis officia autem accusamus qui quo repudiandae asperiores quis inventore. Sapiente voluptatum veritatis, et nesciunt quia laudantium!</p>
+            <div class="detalles">
+              <div class="img-box">
+                <img loading="lazy" src="./assets/imagenes/svg/image_person_security.svg" alt="imagen de perfil" />
+              </div>
+              <h3>
+                Albert Diaz
+                <br /><br />
+                <span>
+                  <i class="fas fa-star" *ngFor="let i of [1, 2, 3, 4, 5]"></i>
+                  <span class="starts" [style]="'--porc:' + 10 * 20 + '%'" >
+                    <i class="fas fa-star" *ngFor="let i of [1, 2, 3, 4, 5]" ></i>
+                  </span>
+                </span>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide" *ngFor="let i of [1,2,3,4,5]">
+        <div class="image-pyme">
+          <img loading="lazy" src="./assets/imagenes/svg/image_person_security.svg" alt="imagen de perfil" />
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination" style="display: none;"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </swiper>
+</div>

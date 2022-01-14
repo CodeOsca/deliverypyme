@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Delivery de Pymes</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="./assets/css/all.min.css" rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUi4FoOgUJISRc_iHJ--J2SVX9rETeLec&libraries=places&language=es"></script>
+  </head>
+  <body>
+    <div class="preloader">
+      <img class="banner__background" src="./assets/imagenes/svg/image_lines.svg" alt="Lineas de fondo">
+      <div class="loader">
+        <div class="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <app-root></app-root>
+    <script src="https://kit.fontawesome.com/a1ec0abd37.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener("load", () => {
+        document.querySelector(".preloader").className += " ocultar";
+      });
+    </script>
+  </body>
+</html>

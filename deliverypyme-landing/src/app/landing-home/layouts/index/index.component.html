@@ -1,0 +1,82 @@
+<main class="main">
+  <app-header></app-header>
+  <app-scroll>
+    <app-sociales></app-sociales>
+
+    <div #banner>
+      <app-banner></app-banner>
+    </div>
+
+    <app-separator></app-separator>
+
+    <div #accion>
+      <app-section [separatorTop]="true">
+        <app-steps [values]="acciones" [animationPlay]="isActionAccion"></app-steps>
+      </app-section>
+    </div>
+
+    <div class="hidden" id="como-funciona" #funciona>
+      <app-section title="¿COMO FUNCIONA?">
+        <app-steps [values]="comoFunciona" [line]="!is767" [animationPlay]="isActionFunciona"></app-steps>
+      </app-section>
+    </div>
+
+    <div class="hidden" id="precios" #precios>
+      <app-section>
+        <div class="precios" #masonryLayout>
+          <div class="masonry-item">
+            <app-precios [communes]="communes1"></app-precios>
+          </div>
+          <div class="masonry-item">
+            <app-precios [communes]="communes2"></app-precios>
+          </div>
+        </div>
+      </app-section>
+    </div>
+
+    <div class="hidden" id="servicios" #servicios>
+      <app-section title="¿LAS FILAS EN LAS SUCURSALES TE QUITAN TIEMPO?" description="Nosotros vamos por ti, recogemos los paquetes con destino a región junto con los de Santiago y los llevamos al siguiente día a la sucursal de tu preferencia.">
+        <div class="servicios">
+          <app-card title="Entregas en Santiago"></app-card>
+          <app-card title="Gestión de paquetes a región"></app-card>
+        </div>
+      </app-section>
+    </div>
+
+    <app-separator></app-separator>
+
+    <div class="hidden" id="nosotros" #nosotros>
+      <app-section>
+        <img class="info__background" src="./assets/imagenes/svg/image_lines.svg" alt="Lineas de fondo">
+        <app-card title="CUANDO ENVIAS CON NOSOTROS, TENDRAS...">
+          <app-info-card *ngFor="let info of infoCard" [title]="info.title" [description]="info.description" [image]="info.image" [revert]="info.revert"></app-info-card>
+          <br />
+          <br />
+          <div class="button_center">
+            <app-button-primary [bold]="true" background="var(--color-white)" color="var(--color-primary)" [bold]="true">
+              <a routerLink="/registrarse" style="text-decoration: none; color: var(--color-primary)">REGISTRAR MI TIENDA</a>
+            </app-button-primary>
+          </div>
+        </app-card>
+      </app-section>
+    </div>
+
+    <div class="hidden" id="pymes" #pymes>
+      <app-section title="QUIENES CONFIAN EN NOSOTROS...">
+        <app-swiper></app-swiper>
+      </app-section>
+    </div>
+
+    <app-separator></app-separator>
+
+    <div class="hidden" #whatsapp>
+      <app-section [separatorTop]="true">
+        <app-whatsapp></app-whatsapp>
+      </app-section>
+    </div>
+
+    <app-section>
+      <app-footer></app-footer>
+    </app-section>
+  </app-scroll>
+</main>

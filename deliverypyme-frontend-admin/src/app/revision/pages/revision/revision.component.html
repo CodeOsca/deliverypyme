@@ -1,0 +1,46 @@
+<div class="container-main">
+  <section class="header-main">
+    <h2 class="title-main">Transferencias</h2>
+  </section>
+
+  <section class="content-main">
+    <app-table
+      *ngIf="revisions"
+      [columns]="columns"
+      [filterOptions]="filterOptions"
+      laberPerPage="Transferencias por página"
+      [data]="revisions"
+    >
+      <ng-container matColumnDef="storeName">
+        <th mat-header-cell *matHeaderCellDef>Nombre de la tienda</th>
+        <td mat-cell *matCellDef="let row">{{ row.user.storeName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nombre de contacto</th>
+        <td mat-cell *matCellDef="let row">{{ row.user.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="typeReference">
+        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <td mat-cell *matCellDef="let row">{{ row.typeReference }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Monto</th>
+        <td mat-cell *matCellDef="let row">{{ row.amount }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="opciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row" style="text-align: right">
+          <a class="id edit" matTooltip="Aceptar" (click)="showAcceptedDialog(row)"><i class="fas fa-thumbs-up"></i></a>
+          <a class="id delete" matTooltip="Rechazar" (click)="showRejectedDialog(row)"
+            ><i class="fas fa-thumbs-up"></i
+          ></a>
+          <a class="id" matTooltip="Detalles" [routerLink]="row.link"><i class="fas fa-eye"></i></a>
+        </td>
+      </ng-container>
+    </app-table>
+  </section>
+</div>

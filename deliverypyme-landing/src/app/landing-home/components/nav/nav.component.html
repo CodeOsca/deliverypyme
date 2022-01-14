@@ -1,0 +1,13 @@
+<nav class="nav" [ngClass]="{ 'show': showNav }">
+  <div class="nav__content">
+    <app-button-primary *ngFor="let nav of navigation" color="var(--color-primary)" background="transparent" [bold]="true"><a [routerLink] [fragment]="nav.url" style="text-decoration: none; color: var(--color-primary)">{{nav.text}}</a></app-button-primary>
+  </div>
+  <div class="nav__buttons__auth">
+    <app-button-primary color="var(--color-primary)" background="transparent" [bold]="true">
+      <a routerLink="/login" style="text-decoration: none; color: var(--color-primary)">Entrar</a>
+    </app-button-primary>
+    <app-button-primary [bold]="true">
+      <a routerLink="/registrarse" style="text-decoration: none; color: var(--color-white)">REGISTRARSE AHORA</a>
+    </app-button-primary>
+  </div>
+</nav>

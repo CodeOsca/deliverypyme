@@ -1,0 +1,42 @@
+<div class="container-modal">
+  <ng-container *ngIf="data.user.comment; else noComment">
+    <h3 class="title-modal">Comentario de {{ data.user.name }}</h3>
+    <div class="content-modal">
+      <div class="content-calificacion">
+        <img loading="lazy" src="../../../../assets/imagenes/quote.svg" class="quote" />
+        <p class="comment">
+          {{ data.user.comment.description }}
+        </p>
+        <span class="calificar">
+          <i class="fas fa-star" *ngFor="let i of [1, 2, 3, 4, 5]"></i>
+          <span class="starts" style="--porc: {{ data.user.comment.rating * 20 }}%">
+            <i class="fas fa-star" *ngFor="let i of [1, 2, 3, 4, 5]"></i>
+          </span>
+        </span>
+      </div>
+    </div>
+  </ng-container>
+  <div class="action-modal">
+    <button
+      class="btn"
+      *ngIf="data.user.comment && !data.user.comment.visible"
+      [mat-dialog-close]="true"
+      (click)="aprrove()"
+    >
+      Aprobar <i class="fas fa-check-circle"></i>
+    </button>
+    <button
+      class="btn"
+      *ngIf="data.user.comment && data.user.comment.visible"
+      [mat-dialog-close]="true"
+      (click)="disapprove()"
+    >
+      Desaprobar <i class="fas fa-check-circle"></i>
+    </button>
+    <button class="btn close" (click)="onNoClick()">Cerrar <i class="fas fa-times-circle"></i></button>
+  </div>
+
+  <ng-template #noComment>
+    <h3 class="title-modal">No ha comentado aún</h3>
+  </ng-template>
+</div>

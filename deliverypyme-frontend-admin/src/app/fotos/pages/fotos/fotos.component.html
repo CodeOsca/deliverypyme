@@ -1,0 +1,26 @@
+<div class="container-main">
+  <section class="header-main">
+    <h2 class="title-main">Pymes landing</h2>
+  </section>
+
+  <section class="content-main">
+    <div class="section add-pyme">
+      <form [formGroup]="form">
+        <mat-radio-group formControlName="type" class="options" aria-label="Select an option">
+          <mat-radio-button value="1">Imagenes de pymes</mat-radio-button>
+          <mat-radio-button value="2">Comentarios de usuarios</mat-radio-button>
+        </mat-radio-group>
+      </form>
+
+      <div class="buttons">
+        <app-button-primary *ngIf="form.value.type === '1'" (handleClick)="openAddDialog()">
+          <i class="fas fa-image" style="margin-right: .3rem;"></i> Imagen de pyme
+        </app-button-primary>
+      </div>
+    </div>
+
+    <div class="section">
+      <app-swiper [comment]="(form.value.type === '2')"></app-swiper>
+    </div>
+  </section>
+</div>

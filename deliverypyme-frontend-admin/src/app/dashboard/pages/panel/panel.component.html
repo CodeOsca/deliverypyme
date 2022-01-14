@@ -1,0 +1,23 @@
+<div class="container-main">
+  <section class="header-main">
+    <h2 class="title-main">Inicio</h2>
+  </section>
+
+  <section class="content-main">
+    <div class="container-info">
+      <div class="info-ordenes">
+        <div class="content-info" *ngFor="let info of infoDispatches">
+          <i class="fas fa-{{ info.icon }}"></i>
+          <div class="description-info">
+            <p class="title-info">{{ info.name }}</p>
+            <p class="cant-info" style="--color: {{ info.color }}">
+              {{ info.cant }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-actividades></app-actividades>
+  </section>
+</div>

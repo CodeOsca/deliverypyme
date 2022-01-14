@@ -1,0 +1,40 @@
+<div class="container-modal-two" [ngClass]="{ ver: ver }">
+  <div class="modal-two">
+    <aside class="header-modal-two">
+      <i class="fas fa-times close" (click)="cerrar.emit(false)"></i>
+    </aside>
+    <section class="content-modal-two">
+      <div class="content-calificacion">
+        <h3 class="text">Califica nuestro servicio</h3>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <textarea
+            rows="4"
+            placeholder="Comentar..."
+            formControlName="description"
+          ></textarea>
+
+          <span class="calificar">
+            <i
+              class="fas fa-star"
+              *ngFor="let i of [1, 2, 3, 4, 5]"
+              (click)="calificar(i)"
+            ></i>
+            <span class="starts" style="--porc: {{ form.value.rating * 20 }}%">
+              <i
+                class="fas fa-star"
+                *ngFor="let i of [1, 2, 3, 4, 5]"
+                (click)="calificar(i)"
+              ></i>
+            </span>
+          </span>
+
+          <aside class="footer-modal-two">
+            <app-button-primary type="submit" background="var(--color-primary)" color="var(--color-white)" [disabled]="form.invalid">
+              <i class="fas fa-check-circle"></i> Aceptar
+            </app-button-primary>
+          </aside>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>

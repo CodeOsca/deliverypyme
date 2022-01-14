@@ -1,0 +1,40 @@
+<div class="content">
+  <div class="content-clear" *ngIf="images.length > 0">
+    <i class="fas fa-times-circle clear" (click)="resetImages()"></i>
+  </div>
+
+  <div class="content__fotos">
+    <div class="image-pyme" *ngFor="let img of images">
+      <img loading="lazy" src="{{ img }}" />
+    </div>
+  </div>
+
+  <p *ngIf="images.length === 0" class="no_image">No se han cargado imagenes...</p>
+
+  <form [formGroup]="formFile" style="display: none">
+    <input
+      formControlName="files"
+      type="file"
+      accept="image/gif, image/png, image/jpeg, image/jpg"
+      (change)="onUploadImages($event)"
+      id="images"
+      multiple
+    />
+  </form>
+
+  <div class="content__buttons">
+    <app-button-primary>
+      <label style="cursor: pointer;" for="images">
+        <i class="fas fa-images" style="margin-right: .3rem;"></i> Cargar logos
+      </label>
+    </app-button-primary>
+
+    <app-button-primary>
+      <i class="fas fa-cloud-upload-alt" style="margin-right: .3rem;"></i> Guardar
+    </app-button-primary>
+
+    <app-button-primary background="var(--color-red)" color="var(--color-white)" (handleClick)="onNoClick()">
+      <i class="fas fa-times-circle" style="margin-right: .3rem;"></i> Cancelar
+    </app-button-primary>
+  </div>
+</div>

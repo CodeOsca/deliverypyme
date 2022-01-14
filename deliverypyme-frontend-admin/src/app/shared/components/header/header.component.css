@@ -1,0 +1,203 @@
+.container-logo {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.container-logo .content-logo {
+  align-items: center;
+  display: flex;
+}
+
+.container-logo .content-logo .h1 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.container-logo .content-logo .h1 img {
+  width: 40px;
+}
+
+.container-logo .fas {
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-s-light);
+  display: flex;
+  font-size: 18px;
+  height: 25px;
+  justify-content: center;
+  transition: 0.3s ease all;
+  width: 25px;
+}
+
+.container-logo .fas:hover {
+  background-color: #f2f2f2;
+}
+
+.header-tienda {
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--text-primary);
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0;
+  position: fixed;
+  transition: 0.3s ease all;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-tienda .content-config {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.header-tienda .content-config .fas {
+  align-items: center;
+  border-radius: 50%;
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 35px;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s;
+  width: 35px;
+}
+
+.header-tienda .content-config .fas.notification::after {
+  align-items: center;
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  content: attr(data-notification);
+  color: var(--color-primary);
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: -5px;
+  top: -6px;
+  min-width: 20px;
+}
+
+.header-tienda .content-config .setting,
+.header-tienda .content-config .setting:active {
+  border: none;
+  border-radius: 0.2rem;
+  margin-right: 0.3rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.header-tienda .content-config .setting:hover {
+  box-shadow: var(--shadow-lite);
+}
+
+.header-tienda .content-config .setting.active {
+  background-color: var(--color-white);
+}
+
+.header-tienda .content-config .setting.active * {
+  color: var(--color-primary) !important;
+}
+
+.header-tienda .content-config .setting.is1024,
+.header-tienda .content-config .setting .name {
+  display: none;
+}
+
+.header-tienda .container-logo .fas {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0 0.2rem 0.2rem 0;
+  color: var(--color-white);
+  cursor: pointer;
+  height: 100%;
+  margin-right: 10px;
+  width: 50px;
+}
+
+h1 {
+  font-size: 0.8rem;
+}
+
+.content-logo {
+  display: none !important;
+}
+
+@media (min-width: 680px) {
+  .header-tienda {
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-tienda .content-config {
+    padding-right: 20px;
+  }
+
+  .header-tienda .content-config .setting {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+  .header-tienda .content-config .setting .fas {
+    margin: 0;
+  }
+
+  .header-tienda .content-config .setting .name {
+    color: var(--color-white);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 0 10px;
+  }
+
+  .header-tienda .container-logo .fas {
+    border-radius: 0 0.2rem 0 0;
+    width: 65px; /* ******** NAV LATERAL *********************** */
+  }
+
+  .content-logo {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-tienda .container-logo .content-logo .h1 {
+    transform: translateY(20px);
+  }
+
+  .header-tienda .container-logo .content-logo .h1 img {
+    background-color: var(--color-white);
+    border-radius: 0.2rem;
+    padding: 0.6rem;
+    width: 90px;
+  }
+
+  .header-tienda .container-logo {
+    padding-left: 20px; /* ****************** SOLO NAVEGACION BAJO EL HEADER **************** */
+  }
+
+  .header-tienda .container-logo .fas {
+    display: none;
+  }
+
+  .header-tienda .content-config .setting.is1024 {
+    display: flex;
+  }
+}

@@ -1,0 +1,90 @@
+.configuraciones {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-height: calc(100vh - 60px);
+  max-width: 250px;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  position: fixed;
+  right: -280px;
+  top: 55px;
+  transition: 0.5s;
+  width: calc(100% - 10px);
+  z-index: 120;
+}
+
+.configuraciones::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+.configuraciones::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+}
+
+.configuraciones::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.configuraciones.ver {
+  right: 5px;
+}
+
+.configuraciones .info-perfil {
+  align-items: center;
+  border-radius: 0.3rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.configuraciones .info-perfil .img {
+  align-items: center;
+  background-color: var(--color-p-light);
+  border-radius: 50%;
+  color: var(--text-p-light);
+  display: flex;
+  font-size: 12px;
+  height: 100px;
+  justify-content: center;
+  margin-bottom: 10px;
+  object-fit: cover;
+  width: 100px;
+}
+
+.configuraciones .info-perfil .name {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.configuraciones .list-config {
+  box-shadow: var(--shadow-card);
+  border-radius: 0.3rem;
+  margin: 0;
+  padding: 0.6rem 0.3rem;
+}
+
+.configuraciones .list-config .item-config {
+  display: block;
+  list-style: none;
+}
+
+.configuraciones .list-config .item-config button {
+  width: 100%;
+}
+
+@media (min-width: 680px) {
+  .configuraciones {
+    max-height: calc(100vh - 70px);
+    top: 65px;
+  }
+}
